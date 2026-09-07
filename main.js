@@ -165,7 +165,7 @@ if (themeToggleBtn) {
 // Scroll-reveal animations
 
 const revealEls = document.querySelectorAll(
-    '.service-item, .stat-item, .timeline-item, .project-item, .blog-post-item, .testimonials-item, .clients-item, .skills-list'
+    '.service-item, .stat-item, .lived-item, .timeline-item, .project-item, .blog-post-item, .testimonials-item, .clients-item, .skills-list'
 );
 
 revealEls.forEach(function (el, idx) {

@@ -1649,3 +1649,62 @@ html[data-theme="light"] .clients-item img:hover { filter: grayscale(0); }
     .skills-progress-fill { transition: none; }
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ============ WHERE I'VE LIVED ============ */
+
+.lived { margin-bottom: 35px; }
+
+.lived-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.lived-item {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform var(--transition1), box-shadow var(--transition1);
+}
+
+.lived-item::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.lived-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow4);
+}
+
+.lived-badge {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs5);
+    font-weight: var(--fw600);
+    color: var(--smoky-black);
+    background: var(--text-gradient-yellow);
+    box-shadow: var(--shadow1);
+}
+
+.lived-current { outline: 1px solid var(--orange-yellow-crayola); }
+
+@media (min-width: 768px) {
+    .lived-list { grid-template-columns: repeat(3, 1fr); }
+    .lived-item { flex-direction: column; }
+}
