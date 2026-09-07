@@ -1888,7 +1888,7 @@ html[data-theme="light"] .clients-item img:hover { filter: grayscale(0); }
     color: var(--light-gray70);
     font-size: var(--fs8);
     font-weight: var(--fw300);
-    margin: -12px 0 16px 2px;
+    margin: 6px 0 18px 2px;
 }
 
 @media (min-width: 580px) {
