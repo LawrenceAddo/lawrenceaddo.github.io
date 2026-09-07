@@ -1708,3 +1708,192 @@ html[data-theme="light"] .clients-item img:hover { filter: grayscale(0); }
     .lived-list { grid-template-columns: repeat(3, 1fr); }
     .lived-item { flex-direction: column; }
 }
+
+/* ============ RESEARCH PAGE ============ */
+
+.research-intro { margin-bottom: 30px; }
+
+.research-section { margin-bottom: 35px; }
+
+.cite-card {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+    transition: transform var(--transition1), box-shadow var(--transition1);
+}
+
+.cite-card::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.cite-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow4);
+}
+
+.cite-type {
+    display: inline-block;
+    color: var(--smoky-black);
+    background: var(--text-gradient-yellow);
+    font-size: var(--fs8);
+    font-weight: var(--fw500);
+    padding: 3px 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.cite-title { margin-bottom: 8px; line-height: 1.4; }
+
+.cite-authors, .cite-venue {
+    color: var(--light-gray);
+    font-size: var(--fs7);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.cite-detail {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.cite-meta {
+    color: var(--light-gray70);
+    font-size: var(--fs7);
+    font-weight: var(--fw300);
+    margin-bottom: 10px;
+}
+
+.cite-link {
+    display: inline-block;
+    color: var(--orange-yellow-crayola);
+    font-size: var(--fs6);
+    font-weight: var(--fw500);
+    transition: transform var(--transition1);
+}
+
+.cite-link:hover { transform: translateX(4px); }
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.profile-item a {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: transform var(--transition1), box-shadow var(--transition1);
+}
+
+.profile-item a::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.profile-item a:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow4);
+}
+
+.profile-name {
+    color: var(--white2);
+    font-size: var(--fs5);
+    font-weight: var(--fw500);
+}
+
+.profile-sub {
+    color: var(--light-gray70);
+    font-size: var(--fs7);
+    font-weight: var(--fw300);
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.interest-chip {
+    color: var(--white2);
+    background: var(--onyx);
+    border: 1px solid var(--jet);
+    font-size: var(--fs7);
+    font-weight: var(--fw400);
+    padding: 7px 14px;
+    border-radius: 20px;
+    transition: transform var(--transition1), border-color var(--transition1), color var(--transition1);
+}
+
+.interest-chip:hover {
+    transform: translateY(-3px);
+    border-color: var(--orange-yellow-crayola);
+    color: var(--orange-yellow-crayola);
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.methods-card {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+}
+
+.methods-card::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.methods-card .service-item-title { margin-bottom: 8px; }
+
+/* ============ CAROUSEL NOTE ============ */
+
+.carousel-note {
+    color: var(--light-gray70);
+    font-size: var(--fs8);
+    font-weight: var(--fw300);
+    margin: -12px 0 16px 2px;
+}
+
+@media (min-width: 580px) {
+    .profile-grid { grid-template-columns: 1fr 1fr; }
+    .cite-card { padding: 28px; }
+}
+
+@media (min-width: 768px) {
+    .methods-grid { grid-template-columns: 1fr 1fr; }
+}

@@ -165,7 +165,7 @@ if (themeToggleBtn) {
 // Scroll-reveal animations
 
 const revealEls = document.querySelectorAll(
-    '.service-item, .stat-item, .lived-item, .timeline-item, .project-item, .blog-post-item, .testimonials-item, .clients-item, .skills-list'
+    '.service-item, .stat-item, .lived-item, .timeline-item, .project-item, .blog-post-item, .testimonials-item, .clients-item, .skills-list, .cite-card, .profile-item, .interests, .methods-grid'
 );
 
 revealEls.forEach(function (el, idx) {
@@ -254,3 +254,57 @@ if (skillsCard && 'IntersectionObserver' in window) {
 } else {
     animateSkills();
 }
+
+// Timed auto-carousel (2s) for horizontal scrollers, e.g. impact + partners
+
+const startCarousel = function (list, itemSelector, intervalMs) {
+    if (!list) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const items = list.querySelectorAll(itemSelector);
+    if (items.length < 2) return;
+
+    let timer = null;
+
+    const stepWidth = function () {
+        const gap = parseFloat(getComputedStyle(list).columnGap || getComputedStyle(list).gap) || 0;
+        return items[0].getBoundingClientRect().width + gap;
+    };
+
+    const advance = function () {
+        if (document.hidden) return;
+        const aboutPage = document.querySelector('[data-page="about"]');
+        if (!aboutPage || !aboutPage.classList.contains('active')) return;
+        if (document.querySelector('[data-modal-container].active')) return;
+
+        const maxScroll = list.scrollWidth - list.clientWidth - 4;
+        if (list.scrollLeft >= maxScroll) {
+            list.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            list.scrollBy({ left: stepWidth(), behavior: 'smooth' });
+        }
+    };
+
+    const start = function () {
+        if (!timer) timer = setInterval(advance, intervalMs);
+    };
+
+    const stop = function () {
+        if (timer) { clearInterval(timer); timer = null; }
+    };
+
+    list.addEventListener('mouseenter', stop);
+    list.addEventListener('mouseleave', start);
+    list.addEventListener('focusin', stop);
+    list.addEventListener('focusout', start);
+    list.addEventListener('touchstart', stop, { passive: true });
+    list.addEventListener('touchend', start, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { stop(); } else { start(); }
+    });
+
+    start();
+};
+
+startCarousel(document.querySelector('.testimonials-list'), '.testimonials-item', 2000);
+startCarousel(document.querySelector('.clients-list'), '.clients-item', 2000);
