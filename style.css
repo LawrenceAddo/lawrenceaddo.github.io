@@ -1400,17 +1400,18 @@ textarea.form-input {
     article { min-height: 100%; }
 
     main {
-        max-width: 1200px;
+        max-width: 1400px;
         margin-inline: auto;
         display: flex;
         justify-content: center;
         align-items: stretch;
-        gap: 25px;
+        gap: 28px;
     }
 
     .main-content {
-        min-width: 75%;
-        width: 75%;
+        min-width: 0;
+        width: 68%;
+        flex: 0 0 68%;
         margin: 0;
     }
 
@@ -1419,6 +1420,9 @@ textarea.form-input {
         top: 60px;
         max-height: max-content;
         height: 100%;
+        min-width: 320px;
+        width: 30%;
+        flex: 0 0 30%;
         margin-bottom: 0;
         padding-top: 60px;
         z-index: 1;
