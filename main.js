@@ -130,3 +130,127 @@ for(let i = 0; i < navigationLinks.length; i++) {
         }
     });
 }
+
+// Theme toggle (dark / light) with localStorage persistence
+
+const rootEl = document.documentElement;
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+const applyTheme = function (theme) {
+    rootEl.setAttribute('data-theme', theme);
+    try { localStorage.setItem('laa-theme', theme); } catch (e) {}
+    if (themeIcon) themeIcon.setAttribute('name', theme === 'light' ? 'sunny-outline' : 'moon-outline');
+};
+
+(function initTheme() {
+    let saved = null;
+    try { saved = localStorage.getItem('laa-theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') {
+        applyTheme(saved);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+    } else {
+        applyTheme('dark');
+    }
+})();
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+        const current = rootEl.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        applyTheme(current === 'light' ? 'dark' : 'light');
+    });
+}
+
+// Scroll-reveal animations
+
+const revealEls = document.querySelectorAll(
+    '.service-item, .stat-item, .timeline-item, .project-item, .blog-post-item, .testimonials-item, .clients-item, .skills-list'
+);
+
+revealEls.forEach(function (el, idx) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = ((idx % 4) * 70) + 'ms';
+});
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+} else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+}
+
+// Animated stat counters
+
+const animateCount = function (el) {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+
+    const tick = function (now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+};
+
+const statNums = document.querySelectorAll('.stat-num');
+
+if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    statNums.forEach(function (el) { counterObserver.observe(el); });
+} else {
+    statNums.forEach(animateCount);
+}
+
+// Animated skill bars (progressive enhancement: bars render full width without JS)
+
+const skillFills = document.querySelectorAll('.skills-progress-fill');
+
+skillFills.forEach(function (fill) {
+    fill.dataset.target = fill.style.width || '0%';
+    fill.style.width = '0%';
+});
+
+const animateSkills = function () {
+    skillFills.forEach(function (fill, i) {
+        setTimeout(function () { fill.style.width = fill.dataset.target; }, i * 120);
+    });
+};
+
+const skillsCard = document.querySelector('.skills-list');
+
+if (skillsCard && 'IntersectionObserver' in window) {
+    const skillsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                animateSkills();
+                skillsObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    skillsObserver.observe(skillsCard);
+} else {
+    animateSkills();
+}
