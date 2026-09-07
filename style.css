@@ -1361,6 +1361,9 @@ textarea.form-input {
 
     .navbar-link { font-weight: var(--fw500); }
 
+    /* Keep article titles clear of the overlapping top navbar */
+    article { padding-top: 84px; }
+
     .service-list {
         grid-template-columns: 1fr 1fr;
         gap: 20px 25px;
