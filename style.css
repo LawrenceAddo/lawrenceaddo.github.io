@@ -1956,3 +1956,73 @@ html[data-theme="light"] .status-badge {
 html[data-theme="light"] .status-live { color: #15803d; }
 html[data-theme="light"] .status-mvp { color: #b45309; }
 html[data-theme="light"] .status-retired { color: #6b7280; }
+
+.project-desc {
+    color: var(--light-gray);
+    font-size: var(--fs7);
+    font-weight: var(--fw300);
+    line-height: 1.55;
+    margin: 6px 10px 0 10px;
+    text-align: justify;
+}
+
+.funding-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-size: var(--fs8);
+    font-weight: var(--fw500);
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: var(--smoky-black);
+    background: var(--text-gradient-yellow);
+    box-shadow: var(--shadow1);
+}
+
+.funding-spotlight {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    z-index: 1;
+    margin-bottom: 25px;
+    outline: 1px solid var(--orange-yellow-crayola);
+}
+
+.funding-spotlight::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.funding-title { margin-bottom: 6px; }
+
+.funding-sub {
+    color: var(--light-gray);
+    font-size: var(--fs7);
+    font-weight: var(--fw300);
+    margin-bottom: 12px;
+}
+
+.funding-list li {
+    color: var(--light-gray);
+    font-size: var(--fs6);
+    font-weight: var(--fw300);
+    line-height: 1.7;
+}
+
+.funding-list strong { color: var(--white2); }
+
+.funding-list a {
+    display: inline;
+    color: var(--orange-yellow-crayola);
+    font-weight: var(--fw500);
+    transition: transform var(--transition1);
+}
+
+.funding-list a:hover { text-decoration: underline; }
