@@ -495,11 +495,20 @@
                 </header>
 
                 <section class="projects">
+                    <p class="portfolio-legend">MVP = early-stage, validating • Live = operating or published • Retired = completed.</p>
+
                     <ul class="filter-list">
                         <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
                         <li class="filter-item"><button data-filter-btn>SaaS & Ventures</button></li>
                         <li class="filter-item"><button data-filter-btn>Business & Finance</button></li>
                         <li class="filter-item"><button data-filter-btn>Research & Analytics</button></li>
+                    </ul>
+
+                    <ul class="filter-list filter-status">
+                        <li class="filter-item"><button class="active" data-filter-status>All statuses</button></li>
+                        <li class="filter-item"><button data-filter-status>MVP (2)</button></li>
+                        <li class="filter-item"><button data-filter-status>Live (3)</button></li>
+                        <li class="filter-item"><button data-filter-status>Retired (4)</button></li>
                     </ul>
 
                     <div class="filter-select-box">
@@ -519,14 +528,32 @@
                         </ul>
                     </div>
 
+                    <div class="filter-select-box">
+                        <button class="filter-select " data-select-status>
+                            <div class="select-value" data-select-value-status>Select Status</div>
+
+                            <div class="select-icon">
+                                <ion-icon name="chevron-down"></ion-icon>
+                            </div>
+                        </button>
+
+                        <ul class="select-list">
+                            <li class="select-item"><button data-select-item-status>All statuses</button></li>
+                            <li class="select-item"><button data-select-item-status>MVP (2)</button></li>
+                            <li class="select-item"><button data-select-item-status>Live (3)</button></li>
+                            <li class="select-item"><button data-select-item-status>Retired (4)</button></li>
+                        </ul>
+                    </div>
+
                     <ul class="project-list">
-                        <li class="project-item active" data-filter-item data-category="saas & ventures">
+                        <li class="project-item active" data-filter-item data-category="saas & ventures" data-status="live">
                             <a href="https://www.2pointlogistics.com" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-live">Live</span>
                                     <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="2Point Logistics platform" loading="lazy">
                                 </figure>
 
@@ -535,13 +562,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="saas & ventures">
+                        <li class="project-item active" data-filter-item data-category="saas & ventures" data-status="mvp">
                             <a href="https://www.linkedin.com/pulse/journey-startabox-bridging-dreams-opportunities-lawrence-fsg0c" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-mvp">MVP</span>
                                     <img src="https://i.postimg.cc/bNrcM2Wt/project-2.png" alt="Startabox" loading="lazy">
                                 </figure>
 
@@ -550,13 +578,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="saas & ventures">
+                        <li class="project-item active" data-filter-item data-category="saas & ventures" data-status="mvp">
                             <a href="https://www.linkedin.com/pulse/unleash-power-your-documents-6-ways-smartadoc-ai-lawrence-suewc" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-mvp">MVP</span>
                                     <img src="https://i.postimg.cc/jSJVqYsq/project-3.jpg" alt="SmartaDoc AI" loading="lazy">
                                 </figure>
 
@@ -565,13 +594,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="business & finance">
+                        <li class="project-item active" data-filter-item data-category="business & finance" data-status="retired">
                             <a href="https://www.linkedin.com/in/lawrence-ansah-addo/" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-retired">Retired</span>
                                     <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="UNOPS donor portfolio" loading="lazy">
                                 </figure>
 
@@ -580,13 +610,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="business & finance">
+                        <li class="project-item active" data-filter-item data-category="business & finance" data-status="retired">
                             <a href="https://www.linkedin.com/in/lawrence-ansah-addo/" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-retired">Retired</span>
                                     <img src="https://i.postimg.cc/43T0JKLw/project-5.png" alt="Treasury and ERP" loading="lazy">
                                 </figure>
 
@@ -595,13 +626,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="research & analytics">
+                        <li class="project-item active" data-filter-item data-category="research & analytics" data-status="live">
                             <a href="https://www.inderscience.com/info/inarticle.php?artid=97382" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-live">Live</span>
                                     <img src="https://i.postimg.cc/qR1DX1kZ/project-6.png" alt="Bank governance research" loading="lazy">
                                 </figure>
 
@@ -610,13 +642,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="research & analytics">
+                        <li class="project-item active" data-filter-item data-category="research & analytics" data-status="live">
                             <a href="https://www.linkedin.com/in/lawrence-ansah-addo/" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-live">Live</span>
                                     <img src="https://i.postimg.cc/Kj4q9tjc/project-7.png" alt="BI dashboards" loading="lazy">
                                 </figure>
 
@@ -625,13 +658,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="business & finance">
+                        <li class="project-item active" data-filter-item data-category="business & finance" data-status="retired">
                             <a href="https://www.linkedin.com/in/lawrence-ansah-addo/" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-retired">Retired</span>
                                     <img src="https://i.postimg.cc/rw2j4B1w/project-8.jpg" alt="Roughriders finance" loading="lazy">
                                 </figure>
 
@@ -640,13 +674,14 @@
                             </a>
                         </li>
 
-                        <li class="project-item active" data-filter-item data-category="research & analytics">
+                        <li class="project-item active" data-filter-item data-category="research & analytics" data-status="retired">
                             <a href="https://www.linkedin.com/in/lawrence-ansah-addo/" target="_blank" rel="noopener">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
+                                    <span class="status-badge status-retired">Retired</span>
                                     <img src="https://i.postimg.cc/7LxNsSQv/project-9.png" alt="Non-profit finance" loading="lazy">
                                 </figure>
 

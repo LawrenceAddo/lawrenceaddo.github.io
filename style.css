@@ -1907,3 +1907,52 @@ html[data-theme="light"] .clients-item img:hover { filter: grayscale(0); }
 .profile-sub {
     font-family: var(--ff-mono);
 }
+
+/* ============ PORTFOLIO STATUS ============ */
+
+.portfolio-legend {
+    color: var(--light-gray70);
+    font-size: var(--fs8);
+    font-weight: var(--fw300);
+    margin-bottom: 18px;
+}
+
+.filter-status { margin-top: -18px; }
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--fs8);
+    font-weight: var(--fw500);
+    padding: 4px 12px 4px 10px;
+    border-radius: 20px;
+    background: hsla(0, 0%, 7%, .72);
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
+
+html[data-theme="light"] .status-badge {
+    background: hsla(0, 0%, 100%, .85);
+    color: var(--white2);
+}
+
+.status-badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-live { color: #4ade80; }
+.status-mvp { color: #fbbf24; }
+.status-retired { color: #9ca3af; }
+
+html[data-theme="light"] .status-live { color: #15803d; }
+html[data-theme="light"] .status-mvp { color: #b45309; }
+html[data-theme="light"] .status-retired { color: #6b7280; }

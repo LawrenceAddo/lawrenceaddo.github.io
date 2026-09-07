@@ -41,55 +41,102 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener('click', testimonialsModalFunc);
 overlay.addEventListener('click', testimonialsModalFunc);
 
-//Activating Filter Select and filtering options
+//Activating Filter Select and filtering options (category x status)
 
 const select = document.querySelector('[data-select]');
 const selectItems = document.querySelectorAll('[data-select-item]');
 const selectValue = document.querySelector('[data-select-value]');
 const filterBtn = document.querySelectorAll('[data-filter-btn]');
 
-select.addEventListener('click', function () {elementToggleFunc(this); });
-
-for(let i = 0; i < selectItems.length; i++) {
-    selectItems[i].addEventListener('click', function() {
-
-        let selectedValue = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        elementToggleFunc(select);
-        filterFunc(selectedValue);
-
-    });
-}
+const selectStatus = document.querySelector('[data-select-status]');
+const selectStatusItems = document.querySelectorAll('[data-select-item-status]');
+const selectStatusValue = document.querySelector('[data-select-value-status]');
+const filterStatusBtn = document.querySelectorAll('[data-filter-status]');
 
 const filterItems = document.querySelectorAll('[data-filter-item]');
 
-const filterFunc = function (selectedValue) {
-    for(let i = 0; i < filterItems.length; i++) {
-        if(selectedValue == "all") {
-            filterItems[i].classList.add('active');
-        } else if (selectedValue == filterItems[i].dataset.category) {
+let activeCategory = 'all';
+let activeStatus = 'all';
+
+const normalizeFilterValue = function (raw) {
+    return raw.toLowerCase().replace(/\s*\(.*\)/, '').trim();
+};
+
+const applyPortfolioFilters = function () {
+    for (let i = 0; i < filterItems.length; i++) {
+        const cat = (filterItems[i].dataset.category || '').toLowerCase();
+        const st = (filterItems[i].dataset.status || '').toLowerCase();
+        const catOk = activeCategory === 'all' || activeCategory === 'all statuses' || cat === activeCategory;
+        const stOk = activeStatus === 'all' || activeStatus === 'all statuses' || st === activeStatus;
+        if (catOk && stOk) {
             filterItems[i].classList.add('active');
         } else {
             filterItems[i].classList.remove('active');
         }
     }
+};
+
+if (select) {
+    select.addEventListener('click', function () {elementToggleFunc(this); });
 }
 
-//Enabling filter button for larger screens 
+for(let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener('click', function() {
+
+        activeCategory = normalizeFilterValue(this.innerText);
+        if (selectValue) selectValue.innerText = this.innerText;
+        if (select) elementToggleFunc(select);
+        applyPortfolioFilters();
+
+    });
+}
+
+if (selectStatus) {
+    selectStatus.addEventListener('click', function () {elementToggleFunc(this); });
+}
+
+for (let i = 0; i < selectStatusItems.length; i++) {
+    selectStatusItems[i].addEventListener('click', function() {
+
+        activeStatus = normalizeFilterValue(this.innerText);
+        if (selectStatusValue) selectStatusValue.innerText = this.innerText;
+        if (selectStatus) elementToggleFunc(selectStatus);
+        applyPortfolioFilters();
+
+    });
+}
+
+//Enabling filter buttons for larger screens
 
 let lastClickedBtn = filterBtn[0];
+let lastClickedStatusBtn = filterStatusBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
     
     filterBtn[i].addEventListener('click', function() {
 
-        let selectedValue = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        filterFunc(selectedValue);
+        activeCategory = normalizeFilterValue(this.innerText);
+        if (selectValue) selectValue.innerText = this.innerText;
+        applyPortfolioFilters();
 
-        lastClickedBtn.classList.remove('active');
+        if (lastClickedBtn) lastClickedBtn.classList.remove('active');
         this.classList.add('active');
         lastClickedBtn = this;
+
+    })
+}
+
+for (let i = 0; i < filterStatusBtn.length; i++) {
+
+    filterStatusBtn[i].addEventListener('click', function() {
+
+        activeStatus = normalizeFilterValue(this.innerText);
+        if (selectStatusValue) selectStatusValue.innerText = this.innerText;
+        applyPortfolioFilters();
+
+        if (lastClickedStatusBtn) lastClickedStatusBtn.classList.remove('active');
+        this.classList.add('active');
+        lastClickedStatusBtn = this;
 
     })
 }
