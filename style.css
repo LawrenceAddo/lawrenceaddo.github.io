@@ -2442,3 +2442,43 @@ html[data-theme="light"] body {
 @media (min-width: 580px) {
     .impact-kicker { margin-left: 95px; }
 }
+
+/* ============ THEME COMPLETION: labels, clients, modal, scrollbar ============ */
+
+.stat-label, .contact-title {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.profile-name {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.clients-item a {
+    display: block;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-align: center;
+    padding: 6px 4px;
+}
+
+.modal-content time {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.modal-avatar-box { border: 2px solid var(--ink); }
+
+html[data-theme="light"] body::-webkit-scrollbar-thumb {
+    background: var(--ink);
+    border-color: var(--smoky-black);
+    box-shadow: none;
+}
