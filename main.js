@@ -198,7 +198,7 @@ const applyTheme = function (theme) {
     if (saved === 'light' || saved === 'dark') {
         applyTheme(saved);
     } else {
-        applyTheme('light');
+        applyTheme('dark');
     }
 })();
 
