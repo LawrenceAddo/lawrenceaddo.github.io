@@ -2482,3 +2482,112 @@ html[data-theme="light"] body::-webkit-scrollbar-thumb {
     border-color: var(--smoky-black);
     box-shadow: none;
 }
+
+/* ============ MONOCHROME ICONS (service icons + impact avatars) ============ */
+
+.service-icon-box .service-icon {
+    display: block;
+    margin: auto;
+    font-size: 40px;
+    color: var(--orange-yellow-crayola);
+}
+
+.testimonials-avatar-box { padding: 8px; }
+
+.testimonials-avatar-box .avatar-icon {
+    display: block;
+    font-size: 48px;
+    color: var(--ink);
+}
+
+.modal-avatar-box { padding: 10px; }
+
+.modal-avatar-box .avatar-icon {
+    display: block;
+    font-size: 64px;
+    color: var(--ink);
+}
+
+.modal-img-wrapper > img { filter: grayscale(1); }
+
+@media (min-width: 580px) {
+    .testimonials-avatar-box .avatar-icon { font-size: 60px; }
+}
+
+/* ============ LIVELINESS: ticker, pulses, floats, nudges ============ */
+
+.ticker {
+    overflow: hidden;
+    background: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll 26s linear infinite;
+}
+
+.ticker-track span {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--page);
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+
+.ticker:hover .ticker-track { animation-play-state: paused; }
+
+.status-live::before {
+    display: inline-block;
+    background: currentColor;
+    animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .35; transform: scale(.7); }
+}
+
+.avatar-box { animation: float-soft 6s ease-in-out infinite; }
+
+@keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.form-btn ion-icon { transition: transform var(--transition1); }
+.form-btn:hover ion-icon { transform: translateX(4px); }
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    background: var(--ink);
+    color: var(--page);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 12px 22px;
+    margin-bottom: 25px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .25);
+    transition: transform var(--transition1), box-shadow var(--transition1);
+}
+
+.whatsapp-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, .25);
+}
+
+.whatsapp-btn ion-icon { font-size: 18px; }
