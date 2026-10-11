@@ -2398,3 +2398,47 @@ html[data-theme="light"] body {
     background-image: radial-gradient(rgba(19, 24, 27, .08) 1.2px, transparent 1.3px);
     background-size: 22px 22px;
 }
+
+/* ============ IMPACT CARDS (Where I've delivered impact) ============ */
+
+.testimonials-item-title {
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.impact-kicker {
+    display: inline-block;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    background: var(--ink);
+    color: var(--page);
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 5px 13px;
+    margin-bottom: 12px;
+}
+
+.testimonials-avatar-box { border: 2px solid var(--ink); }
+
+.testimonials-text {
+    border-left: 3px solid var(--ink);
+    padding-left: 14px;
+}
+
+.impact-meta {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--light-gray70);
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--jet);
+}
+
+@media (min-width: 580px) {
+    .impact-kicker { margin-left: 95px; }
+}
