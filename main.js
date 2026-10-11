@@ -195,10 +195,8 @@ const applyTheme = function (theme) {
     try { saved = localStorage.getItem('laa-theme'); } catch (e) {}
     if (saved === 'light' || saved === 'dark') {
         applyTheme(saved);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        applyTheme('light');
     } else {
-        applyTheme('dark');
+        applyTheme('light');
     }
 })();
 

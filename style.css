@@ -1,25 +1,26 @@
 :root {
-    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
-    --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
-    --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-    --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(200, 14%, 20%) 3%, hsl(200, 16%, 13%) 97%);
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(200, 14%, 22%, .25) 3%, hsla(200, 16%, 12%, 0) 100%), hsl(200, 16%, 12%);
+    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(192, 35%, 82%) 0%, hsla(192, 35%, 82%, 0) 50%);
+    --bg-gradient-yellow2: linear-gradient(135deg, hsla(192, 35%, 82%, .25) 0%, hsla(192, 35%, 82%, 0) 59.86%), hsl(200, 16%, 12%);
+    --border-gradient-onyx: linear-gradient(to bottom right, hsl(200, 10%, 30%) 0%, hsla(200, 10%, 30%, 0) 50%);
+    --text-gradient-yellow: linear-gradient(to right, hsl(192, 40%, 88%), hsl(192, 30%, 72%));
 
-    --jet: hsl(0, 0%, 22%);
-    --onyx: hsl(240, 1%, 17%);
-    --eerie-black1: hsl(240, 2%, 13%);
-    --eerie-black2: hsl(240, 2%, 12%);
-    --smoky-black: hsl(0, 0%, 7%);
-    --white1: hsl(0, 0%, 100%);
-    --white2: hsl(0, 0%, 98%);
-    --orange-yellow-crayola: hsl(45, 100%, 72%);
-    --vegas-gold: hsl(45, 54%, 58%);
-    --light-gray: hsl(0, 0%, 84%);
-    --light-gray70: hsla(0, 0%, 84%, .7);
+    --jet: hsl(200, 12%, 20%);
+    --onyx: hsl(200, 14%, 13%);
+    --eerie-black1: hsl(200, 16%, 11%);
+    --eerie-black2: hsl(200, 18%, 9%);
+    --smoky-black: hsl(200, 20%, 7%);
+    --white1: hsl(200, 25%, 96%);
+    --white2: hsl(0, 0%, 100%);
+    --orange-yellow-crayola: hsl(192, 35%, 82%);
+    --vegas-gold: hsl(192, 30%, 78%);
+    --light-gray: hsl(200, 12%, 80%);
+    --light-gray70: hsla(200, 12%, 80%, .7);
     --bittersweet-shimmer: hsl(0, 43%, 51%);
 
     --ff-sans: 'Space Grotesk', sans-serif;
+    --ff-display: 'Archivo', 'Space Grotesk', sans-serif;
     --ff-mono: 'JetBrains Mono', monospace;
 
     --fs1: 24px;
@@ -44,6 +45,10 @@
 
     --transition1: .25s ease;
     --transition2: .5s ease-in-out;
+
+    --ink: hsl(200, 25%, 94%);
+    --page: hsl(200, 20%, 7%);
+    --paper: hsl(200, 16%, 11%);
 }
 
 *, *::before, *::after {
@@ -350,7 +355,7 @@ article { display: none; }
     bottom: 0;
     left: 0;
     width: 100%;
-    background: hsla(240, 1%, 17%, .75);
+    background: hsla(200, 20%, 7%, .82);
     backdrop-filter: blur(10px);
     border: 1px solid var(--jet);
     border-radius: 12px 12px 0 0;
@@ -1472,24 +1477,28 @@ textarea.form-input {
 /* ============ LIGHT THEME ============ */
 
 html[data-theme="light"] {
-    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 100%) 3%, hsl(220, 20%, 94%) 97%);
-    --bg-gradient-jet: linear-gradient(to bottom right, hsla(42, 90%, 50%, .12) 3%, hsla(42, 90%, 50%, 0) 100%), hsl(0, 0%, 100%);
-    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(42, 95%, 45%) 0%, hsla(36, 100%, 50%, 0) 50%);
-    --bg-gradient-yellow2: linear-gradient(135deg, hsla(42, 95%, 45%, .18) 0%, hsla(35, 100%, 50%, 0) 59.86%), hsl(0, 0%, 100%);
-    --border-gradient-onyx: linear-gradient(to bottom right, hsl(220, 15%, 82%) 0%, hsla(220, 15%, 82%, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right, hsl(40, 95%, 38%), hsl(32, 95%, 42%));
+    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 100%) 3%, hsl(195, 25%, 90%) 97%);
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(195, 30%, 45%, .10) 3%, hsla(195, 30%, 45%, 0) 100%), hsl(0, 0%, 100%);
+    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(200, 18%, 12%) 0%, hsla(200, 18%, 12%, 0) 50%);
+    --bg-gradient-yellow2: linear-gradient(135deg, hsla(200, 18%, 12%, .16) 0%, hsla(200, 18%, 12%, 0) 59.86%), hsl(0, 0%, 100%);
+    --border-gradient-onyx: linear-gradient(to bottom right, hsl(200, 12%, 70%) 0%, hsla(200, 12%, 70%, 0) 50%);
+    --text-gradient-yellow: linear-gradient(to right, hsl(200, 20%, 10%), hsl(200, 20%, 10%));
 
-    --jet: hsl(220, 15%, 86%);
-    --onyx: hsl(220, 18%, 94%);
+    --jet: hsl(195, 18%, 76%);
+    --onyx: hsl(195, 25%, 90%);
     --eerie-black1: hsl(0, 0%, 100%);
-    --eerie-black2: hsl(220, 25%, 97%);
-    --smoky-black: hsl(220, 25%, 93%);
-    --white1: hsl(230, 20%, 18%);
-    --white2: hsl(230, 22%, 14%);
-    --orange-yellow-crayola: hsl(40, 95%, 38%);
-    --vegas-gold: hsl(40, 70%, 38%);
-    --light-gray: hsl(230, 15%, 32%);
-    --light-gray70: hsla(230, 15%, 32%, .7);
+    --eerie-black2: hsl(0, 0%, 100%);
+    --smoky-black: hsl(193, 24%, 79%);
+    --white1: hsl(200, 20%, 16%);
+    --white2: hsl(200, 22%, 10%);
+    --orange-yellow-crayola: hsl(200, 20%, 10%);
+    --vegas-gold: hsl(200, 22%, 26%);
+    --light-gray: hsl(200, 16%, 28%);
+    --light-gray70: hsla(200, 16%, 28%, .7);
+
+    --ink: hsl(200, 20%, 10%);
+    --page: hsl(195, 30%, 82%);
+    --paper: hsl(0, 0%, 100%);
 
     --shadow1: -4px 8px 24px hsla(230, 30%, 30%, .12);
     --shadow2: 0px 16px 30px hsla(230, 30%, 30%, .12);
@@ -2070,4 +2079,322 @@ html[data-theme="light"] .status-retired { color: #6b7280; }
 .service-item-text strong {
     color: var(--orange-yellow-crayola);
     font-weight: var(--fw500);
+}
+
+/* ============ DREAMDATA THEME: powder-blue cover / black inner pages ============ */
+
+/* ---- Heavy grotesque display type ---- */
+
+.article-title, .info-content .name, .h2, .h3, .h4,
+.project-title, .blog-item-title, .timeline-item-title,
+.stat-num, .service-item-title {
+    font-family: var(--ff-display);
+    letter-spacing: -0.015em;
+}
+
+.h2, .h3 { font-weight: 800; }
+.h4 { font-weight: 700; }
+
+.article-title {
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 900;
+    line-height: 1.04;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--ink);
+}
+
+.article-title::after { display: none; }
+
+.info-content .name {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.stat-num {
+    font-family: var(--ff-display);
+    font-weight: 800;
+}
+
+/* ---- Editorial mono meta labels ---- */
+
+.blog-meta :is(.blog-category, time),
+.project-category,
+.carousel-note,
+.portfolio-legend {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+/* ---- Sidebar: report-cover card + sticker title chip ---- */
+
+.info-content .title {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    border-radius: 999px;
+    padding: 6px 14px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    width: auto;
+    max-width: 100%;
+}
+
+html[data-theme="light"] .info-content .title {
+    background: var(--ink);
+    color: var(--page);
+}
+
+.avatar-box { border: 2px solid var(--ink); }
+
+html[data-theme="light"] .avatar-box {
+    background: var(--ink);
+    padding: 5px;
+}
+
+/* ---- Sticker cards on the powder-blue cover ---- */
+
+html[data-theme="light"] .sidebar,
+html[data-theme="light"] article,
+html[data-theme="light"] .service-item,
+html[data-theme="light"] .content-card,
+html[data-theme="light"] .stat-item,
+html[data-theme="light"] .lived-item,
+html[data-theme="light"] .methods-card,
+html[data-theme="light"] .cite-card,
+html[data-theme="light"] .profile-item a,
+html[data-theme="light"] .funding-spotlight,
+html[data-theme="light"] .blog-post-item,
+html[data-theme="light"] .project-item,
+html[data-theme="light"] .testimonials-modal {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+html[data-theme="light"] .service-item::before,
+html[data-theme="light"] .content-card::before,
+html[data-theme="light"] .stat-item::before,
+html[data-theme="light"] .lived-item::before,
+html[data-theme="light"] .methods-card::before,
+html[data-theme="light"] .cite-card::before,
+html[data-theme="light"] .profile-item a::before,
+html[data-theme="light"] .funding-spotlight::before {
+    background: var(--paper);
+}
+
+html[data-theme="light"] .service-item:hover,
+html[data-theme="light"] .content-card:hover,
+html[data-theme="light"] .stat-item:hover,
+html[data-theme="light"] .lived-item:hover,
+html[data-theme="light"] .blog-post-item:hover,
+html[data-theme="light"] .cite-card:hover,
+html[data-theme="light"] .profile-item a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--ink);
+}
+
+/* ---- Black inner pages: subtle ink hairlines ---- */
+
+.service-item, .content-card, .stat-item, .lived-item,
+.methods-card, .cite-card, .profile-item a,
+.funding-spotlight, .blog-post-item, .testimonials-modal {
+    border: 1px solid var(--jet);
+}
+
+/* ---- Framed gallery images (cover doodle frames) ---- */
+
+.project-img, .blog-banner-box {
+    border: 2px solid var(--ink);
+}
+
+.mapbox figure {
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* ---- Bottom navbar: black pill bar ---- */
+
+.navbar { border: 2px solid var(--ink); }
+
+html[data-theme="light"] .navbar {
+    background: #13181B;
+    box-shadow: 4px 4px 0 rgba(19, 24, 27, .28);
+}
+
+.navbar-link {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+html[data-theme="light"] .navbar-link { color: #DCE9ED; }
+
+.navbar-link.active {
+    color: var(--orange-yellow-crayola);
+    background: hsla(192, 35%, 82%, .14);
+    border-radius: 999px;
+}
+
+html[data-theme="light"] .navbar-link.active {
+    color: #13181B;
+    background: #C7DCE1;
+}
+
+/* ---- Filter pills ---- */
+
+.filter-item button {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--light-gray);
+    border: 1.5px solid var(--jet);
+    border-radius: 999px;
+    padding: 8px 16px;
+    transition: color var(--transition1), border-color var(--transition1), background var(--transition1), transform var(--transition1);
+}
+
+.filter-item button:hover {
+    color: var(--white2);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+}
+
+.filter-item button.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--page);
+}
+
+.filter-select {
+    border: 1.5px solid var(--ink);
+    border-radius: 12px;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+}
+
+.select-list {
+    border: 1.5px solid var(--ink);
+    border-radius: 12px;
+}
+
+/* ---- Interest chips: sticker pills ---- */
+
+.interest-chip {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--white2);
+    padding: 8px 15px;
+}
+
+.interest-chip:hover {
+    background: var(--ink);
+    color: var(--page);
+    border-color: var(--ink);
+    transform: translateY(-3px);
+}
+
+/* ---- Citation type + funding badges: monochrome pills ---- */
+
+.cite-type {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-radius: 999px;
+    padding: 5px 14px;
+}
+
+.funding-badge {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    background: var(--ink);
+    color: var(--page);
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 5px 12px;
+}
+
+/* ---- Status badges: Live = solid ink, MVP = outlined, Retired = gray ---- */
+
+.status-badge {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+}
+
+.status-live { background: #C9DEE5; color: #101415; }
+.status-live::before { display: none; }
+.status-mvp { background: transparent; color: #C9DEE5; border-color: #C9DEE5; }
+.status-retired { background: transparent; color: #9ca3af; border-color: #9ca3af; }
+
+html[data-theme="light"] .status-badge { background: transparent; }
+html[data-theme="light"] .status-live { background: #13181B; color: #F4F9FB; border-color: #13181B; }
+html[data-theme="light"] .status-mvp { color: #13181B; border-color: #13181B; }
+html[data-theme="light"] .status-retired { color: #6b7280; border-color: #6b7280; }
+
+/* ---- Contact form: ink-framed inputs + solid send button ---- */
+
+.form-input {
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    border-radius: 12px;
+}
+
+.form-btn {
+    background: var(--ink);
+    color: var(--page);
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .25);
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.form-btn::before { display: none; }
+
+.form-btn:hover {
+    background: var(--ink);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, .25);
+}
+
+.form-btn:disabled {
+    opacity: .45;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-btn:disabled:hover { background: var(--ink); }
+
+/* ---- Powder-blue paper texture on the cover theme ---- */
+
+html[data-theme="light"] body {
+    background-color: #BCCFD6;
+    background-image: radial-gradient(rgba(19, 24, 27, .08) 1.2px, transparent 1.3px);
+    background-size: 22px 22px;
 }
